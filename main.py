@@ -1,8 +1,10 @@
-import speech_recognition as sr
 import os
+from SpeakingModule import speak
+from SpeechRecognitionModule import TakeCommand
 
-def say(text):
-    os.system(f'say {text}')
+
 
 if __name__ == '__main__':
-    say('hello i am ronni')
+    speak('hello i am ronni, How may i assist you')
+    print(TakeCommand())
+
