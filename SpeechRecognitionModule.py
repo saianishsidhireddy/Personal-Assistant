@@ -1,4 +1,5 @@
 import speech_recognition as sr
+from SpeakingModule import speak
 
 def TakeCommand():
     print('I am Listening.......')
@@ -10,9 +11,9 @@ def TakeCommand():
             query = r.recognize_google(audio, language='en-in')
             return f'User said: {query}'
         except sr.UnknownValueError:
-            return "Sorry, I couldn't understand what you said. Please try again."
+            return speak("Sorry, I couldn't understand what you said. Please try again.")
         except sr.RequestError as e:
-            return f"Error occurred during speech recognition: {e}"
-
+            return speak(f"Error occurred during speech recognition: {e}")
+ 
 
 
