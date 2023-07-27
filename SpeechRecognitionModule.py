@@ -9,7 +9,7 @@ def TakeCommand():
         audio = r.listen(Source)
         try:
             query = r.recognize_google(audio, language='en-in')
-            return f'User said: {query}'
+            return f'{query}'
         except sr.UnknownValueError:
             return speak("Sorry, I couldn't understand what you said. Please try again.")
         except sr.RequestError as e:
